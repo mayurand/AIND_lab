@@ -187,8 +187,10 @@ def uniformCostSearch(problem):
 		for nextState, nextAction, nodeCost in problem.getSuccessors(popNode.getValue()):
 						
 			if nextState not in exploredSet:
-				if nextState in fringe.getList():
-					print 'YAYAYY'
+				if nextState in fringe.getList(): ## This one is wrong as get list doesnt work 
+
+				####### Problem updating the parent node priority and parent for a given node 
+
 					new_g = popNode.G +1
 					if nullHeuristic(nextState,problem) > new_g:
 						newNode = NodeSearch(nextState, popNode, nextAction, nullHeuristic(nextState,problem), nodeCost+1)	
@@ -232,7 +234,9 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 			
 			if nextState not in exploredSet:
 				
-				if nextState in fringe.getList():
+				
+				####### Problem updating the parent node priority and parent for a given node 
+				if nextState in fringe.getList(): ## This one is wrong as get list doesnt work 
 					new_g = popNode.G +1
 					if heuristic(nextState,problem) > new_g:
 						newNode = NodeSearch(nextState, popNode, nextAction, heuristic(nextState[0],problem), nodeCost+1)	
