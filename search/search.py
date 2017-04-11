@@ -12,7 +12,6 @@ by Pacman agents (in searchAgents.py).
 """
 
 from util import *
-from graph import *
 
 class SearchProblem:
 	"""
